@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="socket.io/socket.io.js"></script>
+    <script src="./admin.js"></script>
+    <title>BI admin</title>
+</head>
+
+<body class="bd">
+    <section>
+
+        <div class="main">
+            <div class="contents1 box" id="brink01">
+                <h2 class="margincard">米ドル　為替MMT</h2>
+                <div>
+                    <button id="btn_us" value="" >送信</button>
+                    <input type="number"  class="input_txt" id="info_usRate" name="info" value="" max="7" step="0.1"/>
+                    <span id="us_num">0文字</span>
+
+                    <p class="pcenter"><span id="usRate_txt" style="font-size:400%">000.000</span>ドル</p>
+                    <hr>
+                    <p class="pright margin0" id="usRate_update">____年__月__日__:__ 更新</p>
+                </div>
+            </div>
+
+
+
+            <div class="contents2 box wrapper">
+                <div class="main ">
+                    <div class="contents1-1">
+                        <h2 style="color: red">BUY</h2>
+                    </div>
+                    <hr>
+                    <div class="contents1-2 wrapper">
+                        <p class="pcenter margin0 container2"><span style="font-size:250%"><strong id="usBUY">___.__</strong></span>ドル</p>
+                   </div>
+                </div>
+                <hr style="border: none;border-top: 2px dotted;">
+                <div class="main">
+                    <div class="contents1-1">
+                        <h2 style="color: blue">SELL</h2>
+                    </div>
+                    <hr>
+                    <div class="contents1-2 wrapper">
+                        <p class="pcenter margin0 container2"><span style="font-size:250%"><strong id="usSELL">___.__</strong></span>ドル</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="container">
+                    <p class="pright margin5" id="usRate2_update">____年__月__日__:__ 更新</p>
+                </div>
+            </div>
+
+
+
+            <div class="contents3 box" id="brink02">
+                <h2 class="margincard">豪ドル　為替MMT</h2>
+                <div>
+                    <button id="btn_aud" value="" >送信</button>
+                    <input type="number" class="input_txt" id="info_audRate" name="info" value="" max="7" step="0.1"/>
+                    <span id="aud_num">0文字</span>
+
+                    <p class="pcenter"><span id="audRate_txt" style="font-size:400%;">000.000</span> 豪ドル</p>
+                    <hr>
+                    <p class="pright margin0" id="audRate_update">____年__月__日__:__ 更新</p>
+                </div>
+            </div>
+            <div class="contents2 box wrapper">
+                <div class="main ">
+                    <div class="contents1-1">
+                        <h2 style="color: red">BUY</h2>
+                    </div>
+                    <hr>
+                    <div class="contents1-2 wrapper">
+                        <p class="pcenter margin0 container2"><span style="font-size:250%"><strong id="audBUY">___.__</strong></span>ドル</p>
+                    </div>
+                </div>
+                <hr style="border: none;border-top: 2px dotted;">
+                <div class="main">
+                    <div class="contents1-1">
+                        <h2 style="color: blue">SELL</h2>
+                    </div>
+                    <hr>
+                    <div class="contents1-2 wrapper">
+                        <p class="pcenter margin0 container2"><span style="font-size:250%"><strong id="audSELL">___.__</strong></span>ドル</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="container">
+                    <p class="pright margin5" id="audRate2_update">____年__月__日__:__ 更新 更新</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="main" style="width:100%;height:250px">
+            <div class="contents5 box" id="brink05">
+                <h2 class="margincard">外国株お知らせ</h2>
+
+                <button id="btn_c5_info" value="" >追加</button>
+                <input type="text" name="info" id="c5_txt" class="input_txt" value="" max="32" />
+                <span id="c5_num">最大30文字</span>
+
+                <ul id ="c5_info"></ul>
+                <button id="c5_del" value="" >選択内容を削除</button>
+
+            </div>
+            <div class="contents6 box" id="brink06">
+                <h2 class="margincard">今週の主な予定</h2>
+
+		<input type="date" id="date-input">
+                <button id="btn_c6_info" value="" >追加</button>
+                <input type="text" name="info" id="c6_txt" class="input_txt" value="" max="32" />
+                <span id="c6_num">最大30文字</span>
+                <div>
+                    <ul id ="c6_info"></ul>
+                    <hr>
+                    <p class="pright margin0" id="c6_last_update">____年__月__日__:__ 最終更新</p>
+                    <button id="c6_del" value="" >選択内容を削除</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="main" style="width:100%;height:250px">
+            <div class="contents5 box" id="brink07">
+                <h2 class="margincard">売買停止のお知らせ</h2>
+
+                <button id="btn_c7_info" value="" >追加</button>
+                <input type="text" name="info" id="c7_txt" class="input_txt" value="" max="32" />
+                <span id="c7_num">最大30文字</span>
+                <ul id ="c7_info"></ul>
+                <button id="c7_del" value="" >選択内容を削除</button>
+            </div>
+            <div class="contents6 box" id="brink08">
+                <h2 class="margincard">枠増加のお知らせ</h2>
+                <button id="btn_c8_info" value="" >追加</button>
+                <input type="text" name="info" id="c8_txt" class="input_txt" value="" max="32" />
+                <span id="c8_num">最大30文字</span>
+                <ul id ="c8_info"></ul>
+                <button id="c8_del" value="" >選択内容を削除</button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="main" style="width:100%;height:250px">
+            <div class="contents7 box" id="brink09">
+                <h2 class="margincard">商品部からのお知らせ</h2>
+                <button id="btn_c9_info" value="" >追加</button>
+                <input type="text" name="info" id="c9_txt" class="input_txt" value="" max="32" />
+                <span id="c9_num">最大30文字</span>
+                <ul id ="c9_info"></ul>
+                <button id="c9_del" value="" >選択内容を削除</button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="main" style="width:100%;height:250px">
+            <div class="contents8 box" id="brink_non">
+                <h2 class="margincard">更新ログ</h2>
+                <ul id="logs"></ul>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

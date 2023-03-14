@@ -1,0 +1,219 @@
+@keyframes blinkAnime{
+	0%{ color: #000000; background-color: #FFFFFF; }
+	100%{ color: #FFFFFF; background-color: #FF0000; }
+}
+#brink01 {
+	animation: blinkAnime 1s infinite alternate;
+	animation-play-state: paused;
+}
+#brink02 {
+	animation: blinkAnime 1s infinite alternate;
+	animation-play-state: paused;
+}
+#brink05 {
+	animation: blinkAnime 1s infinite alternate;
+	animation-play-state: paused;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+#brink06 {
+	animation: blinkAnime 1s infinite alternate;
+	animation-play-state: paused;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+#brink07 {
+	animation: blinkAnime 1s infinite alternate;
+	animation-play-state: paused;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+#brink08 {
+	animation: blinkAnime 1s infinite alternate;
+	animation-play-state: paused;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+#brink09 {
+	animation: blinkAnime 1s infinite alternate;
+	animation-play-state: paused;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+#brink_non {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+@keyframes BodyblinkAnime{
+	0%{ background-color: #F2F2F2; }
+	100%{ background-color: #000000; }
+}
+@keyframes BodyblinkAnime_reset{
+	0%{ background-color: #F2F200; }
+	100%{ background-color: #000000; }
+}
+.input_txt{
+	width: 50%;
+	margin: 5px;
+	padding: 5px 10px; /*ボックスを大きくする*/
+	font-size: 16px;
+	border-radius: 3px; /*ボックス角の丸み*/
+	border: 2px solid #ddd; /*枠線*/
+	box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar&:hover {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to top, #5bbee5 0%, #52ddae 100%);
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+.contents1,
+.contents2,
+.contents3,
+.contents4 {
+    width: 25%;
+}
+.contents5,
+.contents6 {
+
+    width: 50%;
+}
+
+.contents7,
+.contents8 {
+
+    width: 100%;
+}
+
+.contents1,
+.contents2,
+.contents3,
+.contents4,
+.contents5,
+.contents6,
+.contents7,
+.contents8 {
+    background:#ffffff;
+    margin: 2px 5px 2px;
+    padding: 10px
+}
+
+.contents1-1{
+    width: 25%;
+}
+.contents1-2{
+    width:75%
+}
+
+
+
+
+
+.bd {
+    animation: BodyblinkAnime 0.5s infinite alternate;
+    animation-play-state: paused;
+}
+
+.main {
+    display: flex;
+}
+
+.box {
+    box-shadow: 4px 4px;
+}
+
+.pcenter {
+    text-align: center;
+}
+
+.pright {
+    text-align: right;
+}
+
+.margin0 {
+    margin: 0
+}
+.margin5 {
+    margin: 5px
+}
+.padding0 {
+    padding: 0
+}
+
+
+
+
+header {
+    background: #7fff7f;
+}
+
+section {
+    margin: 50px
+}
+
+footer {
+    background: #ffbf7f;
+}
+
+
+
+.divdebug {
+    border: 2px solid #000000;
+}
+
+.wrapper {
+	position: relative;
+	padding-bottom: 3rem;
+}
+.container {
+	position: absolute;
+	bottom: 0;
+    right: 0;
+}
+.container2 {
+	position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:100%;
+}
+
+.margincard{
+    margin:-10px -10px 0px -10px;
+    padding:5px 10px;
+    background-color: #3d3d3d;
+    color: #ffffff;
+}
+
+.date{
+    color:#FF0000;
+    font-weight: bold;
+    overflow: hidden;
+    text-shadow: 
+       2px  2px 1px #FFEEFF,
+      -2px  2px 1px #FFEEFF,
+       2px -2px 1px #FFEEFF,
+      -2px -2px 1px #FFEEFF,
+       2px  0px 1px #FFEEFF,
+       0px  2px 1px #FFEEFF,
+      -2px  0px 1px #FFEEFF,
+       0px -2px 1px #FFEEFF;        /* 文字の影 */
+}
